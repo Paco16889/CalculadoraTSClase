@@ -24,7 +24,7 @@ if (pantalla) {
             return;
                 }
                 
-
+                if(boton.id)
                // const operaciones = ['suma', 'resta', 'multiplicar', 'dividir'];
                 const operaciones = new Map<number, string> ([
                     [0, 'suma'],
@@ -66,4 +66,12 @@ if (pantalla) {
             });
         });
     }
+}
+
+async (operandoA:number, operandoB: number, operador: string) => {
+    
+}
+
+function imprimeEnPantalla(opera:type) {
+    
 }
