@@ -1,10 +1,11 @@
+"use strict";
 /*const pantalla = document.getElementById("pantalla");
 if (pantalla) {
     console.log(pantalla.textContent);
     
     const botones = document.querySelectorAll("button");
     if (botones) {
-        botones.forEach(boton => { 
+        botones.forEach(boton => {
             boton.addEventListener('click', () => {
                 const valorBoton = boton.textContent.trim();
                  let operandoA: number = 0;
@@ -42,5 +43,5 @@ if (pantalla) {
 }
 
 */
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=front.js.map

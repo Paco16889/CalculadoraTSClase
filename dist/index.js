@@ -47,67 +47,80 @@ switch (indice) {
 }*/
 //}
 //main();
-//ejecutar la funcion principal
-const pantalla = document.getElementById("pantalla");
-if (pantalla) {
-    console.log(pantalla.textContent);
-    const botones = document.querySelectorAll("button");
-    if (botones) {
+//ejecutar la funcion principa
+/*
+import express from 'express';
+import cors from 'cors';
+
+const app = express();
+
+let resultado: number = 0;
+    switch (indice) {
+        case 0:
+            resultado = num1 + num2;
+            break;
+        case 1:
+            resultado = num1 - num2;
+            break;
+        case 2:
+            resultado = num1 * num2;
+            break;
+        case 3:
+            if(num2 === 0){
+                console.log('Error: División por cero.');
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+    
+        default:
+            console.log('Operación no válida.');
+            break;
+    }*/
+//console.log(`El resultado es: ${resultado}`);
+/*
+app.post('/calcular', async (req, res) => {
+const { num1, num2, operacion } = req.body;
+
+// Validaciones...
+
+let resultado: number;
+
+switch (operacion) {
+case 'suma':
+  resultado = num1 + num2;
+  break;
+// resto de casos...
+}
+
+// Respondemos con JSON
+res.json({ resultado });
+});
+
+const operaciones = new Map<number, string> ([
+                [0, 'suma'],
+                [1, 'resta'],
+                [2, 'multiplicar'],
+                [3, 'dividir']
+
+            ]);
+            for(const [key, value] of operaciones){
+                if(boton.id === value){
+                    operador = key;
+
+                }
+            }*/
+window.addEventListener('DOMContentLoaded', () => {
+    const botones = document.querySelectorAll('button');
+    const pantalla = document.getElementById('pantalla');
+    if (pantalla !== null) {
         botones.forEach(boton => {
             boton.addEventListener('click', () => {
-                const valorBoton = boton.textContent.trim();
-                let operandoA = 0;
-                let operandoB = 0;
-                let operador = 0;
-                let resultado = 0;
-                if (boton.id === 'c') {
-                    pantalla.textContent = '0';
-                    return;
-                }
-                if (boton.id === 'borrar') {
-                    if (pantalla.textContent.length === 1 || pantalla.textContent === 'ERROR') {
-                        pantalla.textContent = '0';
-                    }
-                    else {
-                        pantalla.textContent = pantalla.textContent.slice(0, -1);
-                    }
-                    return;
-                }
-                // const operaciones = ['suma', 'resta', 'multiplicar', 'dividir'];
-                const operaciones = new Map([
-                    [0, 'suma'],
-                    [1, 'resta'],
-                    [2, 'multiplicar'],
-                    [3, 'dividir']
-                ]);
-                for (const [key, value] of operaciones) {
-                    if (boton.id === value) {
-                        operador = key;
-                    }
-                }
-                switch (operador) {
-                    case 0:
-                        resultado = operandoA + operandoB;
-                        break;
-                    case 1:
-                        resultado = operandoA - operandoB;
-                        break;
-                    case 2:
-                        resultado = operandoA * operandoB;
-                        break;
-                    case 3:
-                        if (operandoB === 0) {
-                            console.log('Error: División por cero.');
-                            return;
-                        }
-                        resultado = operandoA / operandoB;
-                        break;
-                    default:
-                        console.log('Operación no válida.');
-                        break;
-                }
+                console.log(boton.id);
+                const valor = boton.textContent.trim();
+                pantalla.textContent += valor;
             });
         });
     }
-}
+});
 //# sourceMappingURL=index.js.map
